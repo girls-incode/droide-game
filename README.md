@@ -1,4 +1,4 @@
-## Droid game
+## Droide game
 
 Battle droid game, named YVH, with a system of modules that communicates through HTTP API requests. The main module of the app is the target (enemy droid) selection to attack.
 
@@ -37,8 +37,8 @@ Targets at a distance greater than 100m are considered too far away to be attack
 ## Install
 
 ```bash
-git clone
-cd droid-game && npm i
+git clone git@github.com:girls-incode/droide-game.git
+cd droide-game && npm i
 ```
 ## Usage
 
@@ -97,6 +97,7 @@ curl -X POST http://localhost:8888/radar \
 ```bash
 # Execute multiple test cases
 sudo ./tests.sh
+
 # Will output
 #Test 1 : [  OK  ]
 #Test 2 : [  OK  ]
@@ -137,7 +138,7 @@ npm run format:fixall
 npm run compodoc:open
 ```
 
-The generated documentation will be available at http://127.0.0.1:8080
+The generated documentation will be available at http://localhost:8080
 
 ## Swagger
 

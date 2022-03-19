@@ -1,7 +1,7 @@
 {
     "name": "@girlsincode/droid-game",
     "version": "1.0.0",
-    "description": "Target selection module for droid attack",
+    "description": "Droide game",
     "main": "dist/server.js",
     "type": "module",
     "scripts": {
