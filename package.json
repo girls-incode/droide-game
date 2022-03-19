@@ -1,6 +1,6 @@
 {
     "name": "@girlsincode/droid-game",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "Target selection module for droid attack",
     "main": "dist/server.js",
     "type": "module",
@@ -18,12 +18,15 @@
         "lint": "eslint .",
         "format:fixall": "prettier --write .",
         "format:checkall": "prettier --check .",
-        "husky:prepare": "husky install"
+        "husky:prepare": "husky install",
+        "compodoc": "compodoc -p tsconfig.doc.json",
+        "compodoc:open": "compodoc -p tsconfig.doc.json -w -s"
     },
     "keywords": [],
     "author": "Violeta Angelescu <violeta@girlsincode.com>",
     "license": "ISC",
     "devDependencies": {
+        "@compodoc/compodoc": "^1.1.19",
         "@types/jest": "^27.4.0",
         "@typescript-eslint/eslint-plugin": "^5.14.0",
         "@typescript-eslint/parser": "^5.14.0",

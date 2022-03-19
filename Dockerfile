@@ -6,7 +6,21 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . ./
+
 RUN npm run build
+
+### Development ###
+FROM node:14.18.3-slim as development
+
+WORKDIR /app
+
+COPY --from=build /app/dist/ /app/dist/
+COPY --from=build /app/.env.development /app/.env.development
+COPY --from=build /app/package.json /app/package.json
+COPY --from=build /app/node_modules /app/node_modules
+
+EXPOSE 8888
+CMD npm run start:development
 
 ### Integration ###
 FROM node:14.18.3-slim as integration

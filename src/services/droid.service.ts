@@ -7,7 +7,7 @@ import { Helper } from './helper.service.js';
 type ProtocolFunction = (radarScan: RadarScan) => boolean;
 
 /**
- *
+ * Service that finds the next enemy coordinates
  */
 export default class DroidService {
     private protocols: Protocol[];
@@ -27,6 +27,10 @@ export default class DroidService {
         this.radarScans = radarBody.scan;
     }
 
+    /**
+     * Filter radar coordinates based on protocol rules
+     * @returns {Coordinate}
+     */
     public getNextTargetCoordinates(): Coordinate {
         let classifierProtocol = this.defaultProtocol;
 
@@ -44,6 +48,11 @@ export default class DroidService {
         return this.getEnemyCoordinates(classifierProtocol);
     }
 
+    /**
+     * Filter radar coordinates based on the Furthest and Closest Enemies protocols
+     * @param {protocol}
+     * @returns {Coordinate}
+     */
     private getEnemyCoordinates(protocol: Protocol): Coordinate {
         const intialCoordinates = protocol === Protocol.FurthestEnemies ? { x: 0, y: 0 } : { x: 100, y: 100 };
 
