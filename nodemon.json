@@ -1,0 +1,5 @@
+{
+    "ext": "ts js",
+    "ignore": ["coverage", "node_modules", "src/tests"],
+    "watch": ["src, dist"]
+}
